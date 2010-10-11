@@ -1,0 +1,3 @@
+exec/*
+*.tmproj
+.DS_Store
