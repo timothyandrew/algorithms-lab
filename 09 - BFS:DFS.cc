@@ -43,11 +43,11 @@ void bfs(int matrix[vertices][vertices], int v){
   }
   
   for(int i=0; i<vertices; i++){
-    cout << "Node " << i << " is: ";
+    cout << "Node " << i << " is ";
     if(forest[i]){
-      cout << "Visitable." << endl;
+      cout << "visitable." << endl;
     } else{
-      cout << "Non-visitable." << endl;
+      cout << "non-visitable." << endl;
     }
   }
 }
@@ -83,7 +83,11 @@ int main(){
     cout << "Graph is connected." << endl;
     return 0;
   } else { //BFS
-    bfs(matrix, 2);
+    int source;
+    cout << "Enter source: ";
+    cin >> source;
+    throwLine(20);
+    bfs(matrix, source);
   }
   
   return 0;
