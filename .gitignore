@@ -1,3 +1,5 @@
 exec/*
 *.tmproj
 .DS_Store
+test.cc
+*.txt
