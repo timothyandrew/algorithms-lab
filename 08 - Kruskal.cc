@@ -60,9 +60,5 @@ int main(){
     throwLine(20);
   }
   
-  kruskal(matrix);
-  
-  
-   
-   
+  kruskal(matrix);  
 }

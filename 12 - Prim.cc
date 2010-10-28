@@ -33,7 +33,7 @@ bool elementInArray(int *arr, int size, int elem){
   return false;
 }
 
-void prim(edge allEdges[22]){
+void prim(edge allEdges[(2*edges)]){
   int Vnew[(2*edges)];
   for(int i=0; i<(2*edges); i++){
     Vnew[i] = -1;
@@ -44,7 +44,7 @@ void prim(edge allEdges[22]){
   while(count < vertices-1){
     int smallest = infinity;
     int rec = -1;
-    for(int i=0; i<22; i++){
+    for(int i=0; i<(2*edges); i++){
       if(elementInArray(Vnew,(2*edges),allEdges[i].v1) && !elementInArray(Vnew,(2*edges),allEdges[i].v2)){
         if(allEdges[i].weight <= smallest){
           rec = i;
@@ -74,12 +74,13 @@ int main(){
   int matrix[vertices][vertices];
 
 	FILE *fin = fopen("dist.txt", "r");
-  edge allEdges[22];
+  edge allEdges[(2*edges)];
 	for (i = 0; i < edges; i++) {
 		fscanf(fin, "%d%d%d", &u, &v, &w);
     allEdges[i].v1 = u;
     allEdges[i].v2 = v;
     allEdges[i].weight = w;
+    //cout << allEdges[i].v1 << " <----> " << allEdges[i].v2 << " " << endl; //Display original graph
     
     allEdges[i + edges].v1 = v;
     allEdges[i + edges].v2 = u;
@@ -89,7 +90,6 @@ int main(){
 	
   throwLine(12);
   prim(allEdges);
-  
   
   return 0;
 }
