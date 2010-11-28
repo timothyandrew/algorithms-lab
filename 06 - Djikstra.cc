@@ -74,9 +74,10 @@ int main(){
 		fscanf(fin, "%d%d%d", &u, &v, &w);
 		matrix[u][v] = w;
 		matrix[v][u] = w;
+    cout << u << " <---> " << v << endl;
 	}
 	fclose(fin);
-	
+  cout << "NEXT" << endl;
   cout << "Source? (zero-based) ";
   cin >> source;
 	
